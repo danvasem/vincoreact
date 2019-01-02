@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "327746542736",
+    "firebase_url": "https://vincoreact.firebaseio.com",
+    "project_id": "vincoreact",
+    "storage_bucket": "vincoreact.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327746542736:android:70a86fa52a4b4c73",
+        "android_client_info": {
+          "package_name": "com.vincoreact"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327746542736-99nfrmtqvorg448tvs08h0oj8vgadj49.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOZpZMOS71NjA04iFruv08QK8vWOk-qdg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

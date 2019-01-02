@@ -1,0 +1,171 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>VincoReact</Name>
+    <RootNamespace>VincoReact</RootNamespace>
+    <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>e7cfe1b9-d9c6-4b17-9fde-4d62b4ddffcd</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.js" />
+    <Compile Include="index.js" />
+    <Compile Include="src\app-navigator.js" />
+    <Compile Include="src\bgMessaging.js" />
+    <Compile Include="src\reducers\cliente.js" />
+    <Compile Include="src\reducers\index.js" />
+    <Compile Include="src\reducers\negocio.js" />
+    <Compile Include="src\screens\components\ficha-negocio.js" />
+    <Compile Include="src\screens\negocio.js" />
+    <Compile Include="src\screens\lista-favoritos.js" />
+    <Compile Include="src\screens\login.js" />
+    <Compile Include="src\screens\mapa.js" />
+    <Compile Include="src\screens\qrcode.js" />
+    <Content Include="android\app\BUCK" />
+    <Content Include="android\app\build.gradle" />
+    <Content Include="android\app\proguard-rules.pro" />
+    <Content Include="android\app\src\main\AndroidManifest.xml" />
+    <Content Include="android\app\src\main\java\com\vincoreact\MainActivity.java" />
+    <Content Include="android\app\src\main\java\com\vincoreact\MainApplication.java" />
+    <Content Include="android\app\src\main\res\mipmap-hdpi\ic_launcher.png" />
+    <Content Include="android\app\src\main\res\mipmap-hdpi\ic_launcher_round.png" />
+    <Content Include="android\app\src\main\res\mipmap-mdpi\ic_launcher.png" />
+    <Content Include="android\app\src\main\res\mipmap-mdpi\ic_launcher_round.png" />
+    <Content Include="android\app\src\main\res\mipmap-xhdpi\ic_launcher.png" />
+    <Content Include="android\app\src\main\res\mipmap-xhdpi\ic_launcher_round.png" />
+    <Content Include="android\app\src\main\res\mipmap-xxhdpi\ic_launcher.png" />
+    <Content Include="android\app\src\main\res\mipmap-xxhdpi\ic_launcher_round.png" />
+    <Content Include="android\app\src\main\res\mipmap-xxxhdpi\ic_launcher.png" />
+    <Content Include="android\app\src\main\res\mipmap-xxxhdpi\ic_launcher_round.png" />
+    <Content Include="android\app\src\main\res\values\strings.xml" />
+    <Content Include="android\app\src\main\res\values\styles.xml" />
+    <Content Include="android\build.gradle" />
+    <Content Include="android\gradle.properties" />
+    <Content Include="android\gradlew" />
+    <Content Include="android\gradlew.bat" />
+    <Content Include="android\gradle\wrapper\gradle-wrapper.jar" />
+    <Content Include="android\gradle\wrapper\gradle-wrapper.properties" />
+    <Content Include="android\keystores\BUCK" />
+    <Content Include="android\keystores\debug.keystore.properties" />
+    <Content Include="android\settings.gradle" />
+    <Content Include="app.json" />
+    <Content Include="ios\VincoReact-tvOSTests\Info.plist" />
+    <Content Include="ios\VincoReact-tvOS\Info.plist" />
+    <Content Include="ios\VincoReact.xcodeproj\project.pbxproj" />
+    <Content Include="ios\VincoReact.xcodeproj\xcshareddata\xcschemes\VincoReact-tvOS.xcscheme" />
+    <Content Include="ios\VincoReact.xcodeproj\xcshareddata\xcschemes\VincoReact.xcscheme" />
+    <Content Include="ios\VincoReactTests\Info.plist" />
+    <Content Include="ios\VincoReactTests\VincoReactTests.m" />
+    <Content Include="ios\VincoReact\AppDelegate.h" />
+    <Content Include="ios\VincoReact\AppDelegate.m" />
+    <Content Include="ios\VincoReact\Base.lproj\LaunchScreen.xib" />
+    <Content Include="ios\VincoReact\Images.xcassets\AppIcon.appiconset\Contents.json" />
+    <Content Include="ios\VincoReact\Images.xcassets\Contents.json" />
+    <Content Include="ios\VincoReact\Info.plist" />
+    <Content Include="ios\VincoReact\main.m" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="readme.txt" />
+    <Content Include="src\polly.html" />
+    <Content Include="src\screens\components\button-qr.js" />
+    <Content Include="src\screens\lista-negocios.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="android\" />
+    <Folder Include="android\app\" />
+    <Folder Include="android\app\src\" />
+    <Folder Include="android\app\src\main\" />
+    <Folder Include="android\app\src\main\java\" />
+    <Folder Include="android\app\src\main\java\com\" />
+    <Folder Include="android\app\src\main\java\com\vincoreact\" />
+    <Folder Include="android\app\src\main\res\" />
+    <Folder Include="android\app\src\main\res\mipmap-hdpi\" />
+    <Folder Include="android\app\src\main\res\mipmap-mdpi\" />
+    <Folder Include="android\app\src\main\res\mipmap-xhdpi\" />
+    <Folder Include="android\app\src\main\res\mipmap-xxhdpi\" />
+    <Folder Include="android\app\src\main\res\mipmap-xxxhdpi\" />
+    <Folder Include="android\app\src\main\res\values\" />
+    <Folder Include="android\gradle\" />
+    <Folder Include="android\gradle\wrapper\" />
+    <Folder Include="android\keystores\" />
+    <Folder Include="ios\" />
+    <Folder Include="ios\VincoReact-tvOSTests\" />
+    <Folder Include="ios\VincoReact-tvOS\" />
+    <Folder Include="ios\VincoReact.xcodeproj\" />
+    <Folder Include="ios\VincoReact.xcodeproj\xcshareddata\" />
+    <Folder Include="ios\VincoReact.xcodeproj\xcshareddata\xcschemes\" />
+    <Folder Include="ios\VincoReactTests\" />
+    <Folder Include="ios\VincoReact\" />
+    <Folder Include="ios\VincoReact\Base.lproj\" />
+    <Folder Include="ios\VincoReact\Images.xcassets\" />
+    <Folder Include="ios\VincoReact\Images.xcassets\AppIcon.appiconset\" />
+    <Folder Include="src\" />
+    <Folder Include="src\reducers\" />
+    <Folder Include="src\screens\" />
+    <Folder Include="src\screens\components\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
