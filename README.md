@@ -1,2 +1,2 @@
 # vincoreact
-Versión React Native Open Source de VINCO
+Versión React Native Open Source de VINCO 2019
