@@ -1,0 +1,4 @@
+* Para registrar un repositorio remoto: git remote add origin [https del repositorio]
+* Para traer los cambios del remoto: git pull origin master
+* para subir los cambios del remoto: git push origin master
+* PAra subir los tags: git push origin master --tags
