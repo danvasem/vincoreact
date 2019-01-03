@@ -29,5 +29,10 @@ NOTA: Al agreagar nuevas dependencias en POD, entonces hay que ejcutar pod insta
 * Para configurar APN con Firebase: https://firebase.google.com/docs/cloud-messaging/ios/certs  
     NOTA: Con Firebase ya no es necesario manejar otro APPLICATION en SNS ya que los mensajes de Firebase llegan a iOS tambien.
 
+* Para configurar Crashlytics: https://rnfirebase.io/docs/v5.x.x/crashlytics/ios
+    NOTA: Los pods deben ser agregados segun se indica en: https://firebase.google.com/docs/crashlytics/get-started
+
+    
+
 
 

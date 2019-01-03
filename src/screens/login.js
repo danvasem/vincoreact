@@ -91,10 +91,10 @@ class Login extends Component {
     }
 
     handleCrash = () => {
-        console.log("Forzamos crash para crashlytics 2.");
+        console.log("Forzamos crash para crashlytics 3.");
         firebase.crashlytics().log("Forzamos error en Crashlytics de manera manual");
-        //firebase.crashlytics().crash();
-        this.daniel.hola = {};
+        firebase.crashlytics().crash();
+        //this.daniel.hola = {};
     }
 
     render() {

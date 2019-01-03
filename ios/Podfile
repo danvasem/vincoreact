@@ -12,6 +12,8 @@ target 'VincoReact' do
   # use_frameworks!
 
   # Pods for VincoReact
+  pod 'Fabric', '~> 1.7.13'
+  pod 'Crashlytics', '~> 3.10.7'
 
   target 'VincoReact-tvOSTests' do
     inherit! :search_paths
