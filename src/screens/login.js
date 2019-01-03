@@ -15,6 +15,7 @@ import {
     AWS_COGNITO_CLIENT_ID, AWS_COGNITO_IDENTITY_POOL_ID, AWS_COGNITO_USER_POOL_ID, AWS_REGION, awsObtenerCognitoLoginObject,
     TEST_USER_EMAIL, TEST_USER_PWD
 } from '../config/config-DEV';
+import firebase from 'react-native-firebase';
 
 class Login extends Component {
 
@@ -89,6 +90,13 @@ class Login extends Component {
         this.props.navigation.navigate('Main');
     }
 
+    handleCrash = () => {
+        console.log("Forzamos crash para crashlytics 2.");
+        firebase.crashlytics().log("Forzamos error en Crashlytics de manera manual");
+        //firebase.crashlytics().crash();
+        this.daniel.hola = {};
+    }
+
     render() {
         return (
             <SafeAreaView
@@ -115,6 +123,12 @@ class Login extends Component {
                         color="#039BE5"
                     />
                 }
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={this.handleCrash}
+                >
+                    <Text style={styles.buttonLabel}>Crash</Text>
+                </TouchableOpacity>
 
             </SafeAreaView>
         );
