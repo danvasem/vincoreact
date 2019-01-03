@@ -48,7 +48,7 @@ class Login extends Component {
 
         const authenticationData = {
             Username: 'turok3000@gmail.com',
-            Password: 'Vinco123'
+            Password: 'XXXXXX'
         };
         var authenticationDetails = new AuthenticationDetails(authenticationData);
 
