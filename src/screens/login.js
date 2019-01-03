@@ -1,7 +1,6 @@
 ﻿import React, { Component } from 'react';
 import AWS from 'aws-sdk/global';
 import S3 from 'aws-sdk/clients/s3';
-import Lambda from 'aws-sdk/clients/lambda';
 import { CognitoUserPool, CognitoUser, AuthenticationDetails } from 'amazon-cognito-identity-js';
 import {
     SafeAreaView,
@@ -12,6 +11,10 @@ import {
     ToastAndroid,
     ActivityIndicator
 } from 'react-native';
+import {
+    AWS_COGNITO_CLIENT_ID, AWS_COGNITO_IDENTITY_POOL_ID, AWS_COGNITO_USER_POOL_ID, AWS_REGION, awsObtenerCognitoLoginObject,
+    TEST_USER_EMAIL, TEST_USER_PWD
+} from '../config/config-DEV';
 
 class Login extends Component {
 
@@ -20,11 +23,11 @@ class Login extends Component {
     }
 
     handleS3 = async () => {
-        AWS.config.region = 'us-east-1';
-        AWS.config.credentials = new AWS.CognitoIdentityCredentials({ IdentityPoolId: 'us-east-1:28f2a308-58e5-4be4-86fa-ba5b5ec56215' });
+        AWS.config.region = AWS_REGION;
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({ IdentityPoolId: AWS_COGNITO_IDENTITY_POOL_ID });
         const S3Client = new S3();
 
-        const bucketName = 'daniel-vinco-04';
+        const bucketName = 'XXXXXX';
         const keyName = 'Hola mundo.txt';
         
         await S3Client.createBucket({ Bucket: bucketName }).promise();
@@ -47,18 +50,18 @@ class Login extends Component {
         });
 
         const authenticationData = {
-            Username: 'turok3000@gmail.com',
-            Password: 'XXXXXX'
+            Username: TEST_USER_EMAIL,
+            Password: TEST_USER_PWD
         };
         var authenticationDetails = new AuthenticationDetails(authenticationData);
 
         const poolData = {
-            UserPoolId: 'us-east-1_OlPayx8XF',
-            ClientId: '12jbk98ir87tjct5icd5f4h6ld'
+            UserPoolId: AWS_COGNITO_USER_POOL_ID,
+            ClientId: AWS_COGNITO_CLIENT_ID
         };
         const userPool = new CognitoUserPool(poolData);
         const userData = {
-            Username: 'turok3000@gmail.com',
+            Username: TEST_USER_EMAIL,
             Pool: userPool
         };
         const cognitoUser = new CognitoUser(userData);
@@ -74,15 +77,11 @@ class Login extends Component {
         const accessToken = result.getAccessToken().getJwtToken();
 
         //Realizamos la autenticación de AWS
-        AWS.config.region = 'us-east-1';
+        AWS.config.region = AWS_REGION;
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-            IdentityPoolId: 'us-east-1:28f2a308-58e5-4be4-86fa-ba5b5ec56215',
-            Logins: {
-                'cognito-idp.us-east-1.amazonaws.com/us-east-1_OlPayx8XF': result.getIdToken().getJwtToken()
-            }
+            IdentityPoolId: AWS_COGNITO_IDENTITY_POOL_ID,
+            Logins: awsObtenerCognitoLoginObject(result.getIdToken().getJwtToken())
         });
-
-        //ToastAndroid.show("Login exitoso!!", ToastAndroid.LONG);
 
         this.setState({
             loading: false

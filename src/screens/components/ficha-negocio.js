@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import S3 from 'aws-sdk/clients/s3';
+import { AWS_S3_BUCKET_VINCO_LISTA_FAVORITOS } from '../../config/config-DEV';
 
 class FichaNegocio extends Component {
 
@@ -19,7 +20,7 @@ class FichaNegocio extends Component {
 
     async componentDidMount() {
         const params = {
-            Bucket: 'vincoappfiles/negocios/listafavoritos',
+            Bucket: AWS_S3_BUCKET_VINCO_LISTA_FAVORITOS,
             Key: `${this.props.NU}.jpg`
         };
         const S3Client = new S3();

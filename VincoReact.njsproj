@@ -34,6 +34,7 @@
     <Compile Include="index.js" />
     <Compile Include="src\app-navigator.js" />
     <Compile Include="src\bgMessaging.js" />
+    <Compile Include="src\config\config-DEV.js" />
     <Compile Include="src\reducers\cliente.js" />
     <Compile Include="src\reducers\index.js" />
     <Compile Include="src\reducers\negocio.js" />
@@ -101,6 +102,7 @@
     <Folder Include="android\gradle\wrapper\" />
     <Folder Include="android\keystores\" />
     <Folder Include="src\" />
+    <Folder Include="src\config\" />
     <Folder Include="src\reducers\" />
     <Folder Include="src\screens\" />
     <Folder Include="src\screens\components\" />

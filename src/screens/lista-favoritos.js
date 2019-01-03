@@ -12,7 +12,7 @@ import Lambda from 'aws-sdk/clients/lambda';
 import SNS from 'aws-sdk/clients/sns';
 import FichaNegocio from './components/ficha-negocio';
 import firebase from 'react-native-firebase';
-import { stringify } from 'querystring';
+import { AWS_SNS_PLATFORM_APPLICATION_ARN } from '../config/config-DEV';
 
 class ListaFavoritos extends Component {
 
@@ -31,7 +31,7 @@ class ListaFavoritos extends Component {
         console.log("Firebase Token: " + fcmToken);
         //Registramos el endpoint en SNS
         const resSNS=await (new SNS()).createPlatformEndpoint({
-            PlatformApplicationArn: 'arn:aws:sns:us-east-1:984544342457:app/GCM/VincoReact',
+            PlatformApplicationArn: AWS_SNS_PLATFORM_APPLICATION_ARN,
             Token: fcmToken
         }).promise();
         console.log("Resultado de registro en SNS: " + JSON.stringify(resSNS));
