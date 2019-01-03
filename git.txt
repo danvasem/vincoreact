@@ -2,3 +2,6 @@
 * Para traer los cambios del remoto: git pull origin master
 * para subir los cambios del remoto: git push origin master
 * PAra subir los tags: git push origin master --tags
+
+* Para quitar un archivo del tracking y no borrarlo del working directory: git rm --cached prueba.txt
+	Luego hay que incluirlo en el gitignore y realizar un commit

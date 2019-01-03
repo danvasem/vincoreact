@@ -71,8 +71,10 @@
     <Content Include="android\keystores\debug.keystore.properties" />
     <Content Include="android\settings.gradle" />
     <Content Include="app.json" />
+    <Content Include="git.txt" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
+    <Content Include="prueba.txt" />
     <Content Include="README.md" />
     <Content Include="readme.txt" />
     <Content Include="readmeIOS.txt" />
