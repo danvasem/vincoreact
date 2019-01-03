@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    TouchableOpacity,
     View,
     Text,
     StyleSheet,
@@ -7,7 +8,6 @@ import {
 } from 'react-native';
 import Lambda from 'aws-sdk/clients/lambda';
 import QRCode from 'react-native-qrcode-svg';
-import { NavigationActions } from 'react-navigation';
 
 class QrCode extends Component {
 
@@ -40,11 +40,18 @@ class QrCode extends Component {
                         <ActivityIndicator color="#039BE5" />
                         :
                         <View style={styles.card}>
+                            <TouchableOpacity
+                                style={styles.btnCerrar}
+                                onPress={this.props.handlePressCerrar}
+                            >
+                                <Text style={styles.btnCerrarText}>X</Text>
+                            </TouchableOpacity>
                             <QRCode
                                 value={this.state.codigoTemporal}
                                 size={200}
                             />
                             <Text>{this.state.codigoTemporal}</Text>
+                            
                         </View>
                 }
             </View>
@@ -67,6 +74,19 @@ const styles = StyleSheet.create({
         padding: 20,
         height: 240,
         width: 240
+    },
+    btnCerrar: {
+        width: 20,
+        height: 20,
+        marginLeft: 220,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: "#039BE5",
+        borderRadius: 5
+    },
+    btnCerrarText: {
+        color: 'white',
+        fontWeight: 'bold'
     }
 });
 

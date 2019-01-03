@@ -15,7 +15,6 @@ import ListaFavoritos from './screens/lista-favoritos';
 import ListaNegocios from './screens/lista-negocios';
 import Login from './screens/login';
 import Mapa from './screens/mapa';
-import QrCode from './screens/qrcode';
 import ButtonQr from './screens/components/button-qr';
 import negocio from './screens/negocio';
 
@@ -53,7 +52,7 @@ const Main = createStackNavigator(
         Main: {
             screen: MainTab,
             navigationOptions: {
-                title: 'VINCO 3',
+                title: 'VINCO',
                 headerRight: <ButtonQr />
             }
         },

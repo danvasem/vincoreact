@@ -6,7 +6,6 @@ import {
     StyleSheet,
     Modal
 } from 'react-native';
-import { withNavigation, StackActions } from 'react-navigation';
 import QrCode from '../qrcode';
 
 class ButtonQr extends Component{
@@ -16,10 +15,6 @@ class ButtonQr extends Component{
     }
 
     handlePress = () => {
-        //this.props.navigation.dispatch(StackActions.push({
-        //    routeName: 'DialogoQR'
-        //}));
-
         this.setState({
             modalVisible: true
         });
@@ -30,6 +25,7 @@ class ButtonQr extends Component{
             modalVisible: false
         });
     }
+
 
     render() {
         if (!this.state.modalVisible) {
@@ -51,7 +47,9 @@ class ButtonQr extends Component{
                         transparent
                         visible
                     >
-                        <QrCode />
+                        <QrCode
+                            handlePressCerrar={this.closeDialog}
+                        />
                     </Modal>
                 </View>
             );
@@ -74,4 +72,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default withNavigation(ButtonQr);
+export default ButtonQr;
