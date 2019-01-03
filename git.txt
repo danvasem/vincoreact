@@ -5,3 +5,6 @@
 
 * Para quitar un archivo del tracking y no borrarlo del working directory: git rm --cached prueba.txt
 	Luego hay que incluirlo en el gitignore y realizar un commit
+
+* Para descartar los cambios que se han realizado en el "working directory" y que no se han pasado a commit: git checkout .
+* Para retornar un archivo del stage al working: git reset [nombre archivo]
