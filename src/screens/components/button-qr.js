@@ -46,6 +46,7 @@ class ButtonQr extends Component{
                         onRequestClose={this.closeDialog}
                         transparent
                         visible
+                        animationType="fade"
                     >
                         <QrCode
                             handlePressCerrar={this.closeDialog}
@@ -65,7 +66,8 @@ const styles = StyleSheet.create({
         marginRight: 20,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: "#039BE5"   
+        backgroundColor: "#039BE5",
+        borderRadius: 5
     },
     text: {
         color: 'white'
