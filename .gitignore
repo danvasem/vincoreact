@@ -57,3 +57,4 @@ buck-out/
 
 /android/app/src/main/AndroidManifest.xml
 prueba.txt
+/src/config/

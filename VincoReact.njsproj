@@ -44,6 +44,7 @@
     <Compile Include="src\screens\login.js" />
     <Compile Include="src\screens\mapa.js" />
     <Compile Include="src\screens\qrcode.js" />
+    <Content Include=".gitignore" />
     <Content Include="android\app\BUCK" />
     <Content Include="android\app\build.gradle" />
     <Content Include="android\app\proguard-rules.pro" />
