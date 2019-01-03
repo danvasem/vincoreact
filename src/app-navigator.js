@@ -53,7 +53,7 @@ const Main = createStackNavigator(
         Main: {
             screen: MainTab,
             navigationOptions: {
-                title: 'VINCO',
+                title: 'VINCO 2',
                 headerRight: <ButtonQr />
             }
         },
