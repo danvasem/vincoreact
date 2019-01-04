@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
     View,
-    Text,
     ActivityIndicator,
-    ToastAndroid,
     FlatList,
     StyleSheet
 } from 'react-native';

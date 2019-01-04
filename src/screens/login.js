@@ -12,10 +12,13 @@ import {
     ActivityIndicator
 } from 'react-native';
 import {
-    AWS_COGNITO_CLIENT_ID, AWS_COGNITO_IDENTITY_POOL_ID, AWS_COGNITO_USER_POOL_ID, AWS_REGION, awsObtenerCognitoLoginObject,
+    AWS_COGNITO_CLIENT_ID, AWS_COGNITO_IDENTITY_POOL_ID, AWS_COGNITO_USER_POOL_ID, AWS_COGNITO_IDENTITY_POOL_ID_FACEBOOK,
+    AWS_REGION, awsObtenerCognitoLoginObject,
     TEST_USER_EMAIL, TEST_USER_PWD
 } from '../config/config-DEV';
 import firebase from 'react-native-firebase';
+import { AccessToken } from 'react-native-fbsdk';
+import FBLoginButton from './components/FBLoginButton';
 
 class Login extends Component {
 
@@ -75,8 +78,6 @@ class Login extends Component {
     }
 
     autenticacionExitosa = async (result) => {
-        const accessToken = result.getAccessToken().getJwtToken();
-
         //Realizamos la autenticación de AWS
         AWS.config.region = AWS_REGION;
         AWS.config.credentials = new AWS.CognitoIdentityCredentials({
@@ -94,7 +95,26 @@ class Login extends Component {
         console.log("Forzamos crash para crashlytics 3.");
         firebase.crashlytics().log("Forzamos error en Crashlytics de manera manual");
         firebase.crashlytics().crash();
-        //this.daniel.hola = {};
+    }
+
+    handleFBLogin = async (error, result) => {
+        if (error) {
+            alert("Login failed with error: " + error.message);
+        } else if (result.isCancelled) {
+            alert("Login was cancelled");
+        } else {
+            const token = (await AccessToken.getCurrentAccessToken()).accessToken;
+            console.log("FB Token: "+token);
+            AWS.config.region = AWS_REGION;
+            AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                IdentityPoolId: AWS_COGNITO_IDENTITY_POOL_ID_FACEBOOK,
+                Logins: {
+                    'graph.facebook.com':token
+                }
+            });
+            
+            this.props.navigation.navigate('Main');
+        }
     }
 
     render() {
@@ -129,6 +149,9 @@ class Login extends Component {
                 >
                     <Text style={styles.buttonLabel}>Crash</Text>
                 </TouchableOpacity>
+                <FBLoginButton
+                    handleFBLogin={this.handleFBLogin}
+                />
 
             </SafeAreaView>
         );

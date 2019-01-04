@@ -30,5 +30,19 @@ NOTA: en la versión de Google Maps actualizar build.gradle con la versión 16.0.0
 	en app/build.gradle cambiar la versión a: implementation 'com.google.firebase:firebase-messaging:17.3.3'
 *Para habilitar la visualización de notificaciones en ANdroid, seguir los pasos: https://rnfirebase.io/docs/v4.3.x/notifications/android
 
+* Para habilitar Crashlytics: https://rnfirebase.io/docs/v5.x.x/crashlytics/android
+
+* Para instalar login con Facebook: https://developers.facebook.com/docs/react-native/getting-started
+	npm install --save react-native-fbsdk
+	react-native link react-native-fbsdk
+
+	Seguir los pasos de: https://developers.facebook.com/docs/react-native/configure-android-current
+	NOTA: Recordar no repetir en MainApplication.java el FBSDKPackage en la lista, si ya existe se reemplaza.
+
+	Para obtener la clave hash de desarrollo:
+	cd "C:\Program Files (x86)\Java\jdk1.8.0_161\jre\bin"
+	keytool -exportcert -alias androiddebugkey -keystore "C:\Users\user\AppData\Local\Xamarin\Mono for Android\debug.keystore" | "C:\OpenSSL\bin\openssl" sha1 -binary | "C:\OpenSSL\bin\openssl" base64
+	Introduzca la contraseña del almacén de claves:  android
+
 
 

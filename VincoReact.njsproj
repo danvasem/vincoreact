@@ -38,6 +38,7 @@
     <Compile Include="src\reducers\cliente.js" />
     <Compile Include="src\reducers\index.js" />
     <Compile Include="src\reducers\negocio.js" />
+    <Compile Include="src\screens\components\FBLoginButton.js" />
     <Compile Include="src\screens\components\ficha-negocio.js" />
     <Compile Include="src\screens\negocio.js" />
     <Compile Include="src\screens\lista-favoritos.js" />
