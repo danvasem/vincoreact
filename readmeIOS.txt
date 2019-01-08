@@ -39,7 +39,10 @@ NOTA: Al agreagar nuevas dependencias en POD, entonces hay que ejcutar pod insta
         Arrastrar desde la direccion anterior a la carpeta Frameworks del .xcodeproj para que los reconozca, arrastar Login, Share, Core y Bolt
         Validar que en el proyecto .xcodeproj en "Framework search paths" se incluya $(HOME)/Documents/FacebookSDK
         Si existen errores de ejecucion con la version 4.39.0 de FBSDK entonces descargar la version 4.38 desde https://origincache.facebook.com/developers/resources/?id=FacebookSDKs-iOS-4.38.0.zip y reemplazar su contenido en Documents/FacebookSDK
-    Agregar el proyecto node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj a las librerias del proyecto en xCode y verificar que libRCTFBSDK.a se encuentra en la lista de Linked Framework and Libreries
+        Agregar el proyecto node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj a las librerias del proyecto en xCode y verificar que libRCTFBSDK.a se encuentra en la lista de Linked Framework and Libreries
+    NOTA:Si en algun momento el motor JS de debug da un problema de referencias repetidas de React,colocar lo siguiente en el archivo ios/Podfile:
+        pod 'React', :path => '../node_modules/react-native'
+        pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
 
 
 
