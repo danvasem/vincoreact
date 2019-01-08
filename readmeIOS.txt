@@ -32,7 +32,14 @@ NOTA: Al agreagar nuevas dependencias en POD, entonces hay que ejcutar pod insta
 * Para configurar Crashlytics: https://rnfirebase.io/docs/v5.x.x/crashlytics/ios
     NOTA: Los pods deben ser agregados segun se indica en: https://firebase.google.com/docs/crashlytics/get-started
 
-    
+* Para configurar Facebook en iOS: https://github.com/facebook/react-native-fbsdk
+    Seguir los pasos como se indica en el link anterior.
+    Recordar:
+        Colocar el SDK de Facebook en $(HOME)/documents/FacebookSDK
+        Arrastrar desde la direccion anterior a la carpeta Frameworks del .xcodeproj para que los reconozca, arrastar Login, Share, Core y Bolt
+        Validar que en el proyecto .xcodeproj en "Framework search paths" se incluya $(HOME)/Documents/FacebookSDK
+        Si existen errores de ejecucion con la version 4.39.0 de FBSDK entonces descargar la version 4.38 desde https://origincache.facebook.com/developers/resources/?id=FacebookSDKs-iOS-4.38.0.zip y reemplazar su contenido en Documents/FacebookSDK
+    Agregar el proyecto node_modules/react-native-fbsdk/ios/RCTFBSDK.xcodeproj a las librerias del proyecto en xCode y verificar que libRCTFBSDK.a se encuentra en la lista de Linked Framework and Libreries
 
 
 
