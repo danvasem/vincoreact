@@ -99,6 +99,7 @@ class Login extends Component {
 
     handleFBLogin = async (error, result) => {
         if (error) {
+            console.log(JSON.stringify(error))
             alert("Login failed with error: " + error.message);
         } else if (result.isCancelled) {
             alert("Login was cancelled");
